@@ -1,20 +1,25 @@
 import "./App.css";
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import Home from "./components/Home";
-import About from "./components/About";
+import Home from "./pages/Home";
+import ServiceDetail from "./pages/services/ServiceDetail";
+import ServicesList from "./pages/services/ServicesList";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+    <div>
+      <Header />
+
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/about">
-          <About />
+        <Route exact path="/services">
+          <ServicesList />
+        </Route>
+        <Route path="/services/:serviceId">
+          <ServiceDetail />
         </Route>
       </Switch>
     </div>
