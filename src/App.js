@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ServiceDetail from "./pages/services/ServiceDetail";
 import ServicesList from "./pages/services/ServicesList";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <ServiceDetail />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

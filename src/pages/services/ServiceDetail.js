@@ -4,7 +4,7 @@ import servicesData from "./servicesData";
 
 export default function ServiceDetail(props) {
   const { serviceId } = useParams();
-  console.log(serviceId);
+
   const thisService = servicesData.find((service) => service._id === serviceId);
 
   return (
