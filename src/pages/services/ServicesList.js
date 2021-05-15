@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import servicesData from "./servicesData";
 
 export default function ServicesList() {
+  const { url } = useRouteMatch();
+
   const services = servicesData.map((service) => (
     <h3 key={service._id}>
-      <Link to={`/services/${service._id}`}>{service.name}</Link>$
-      {service.price}
+      <Link to={`${url}/${service._id}`}>{service.name}</Link>${service.price}
     </h3>
   ));
   return (
